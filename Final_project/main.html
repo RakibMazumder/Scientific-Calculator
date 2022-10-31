@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <script type="text/javascript" src="calculatorFunctions.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <div class="header">
+
+        
+        <li class="titlecalculator"><a href="">www.bestgroupprojectcalculator.com</a> </li>
+        
+
+        <video autoplay loop class="videomath" muted plays-inline>
+
+            <source src="video.mp4" type="video/mp4">
+
+        </video>    
+
+        <img src="logo.png" class="logo">
+    </div>
+</head>
+
+<body>
+    
+    <form name="scientific calculator">
+    <table class="calculator" cellspacing="0" cellpadding="1">
+        <tr>
+        <td colspan="5"><input id="query" name="display" value="" size="28" maxlength="25"></td> <!-- Not sure why we have a character limit-->
+        </tr>
+        <tr>
+            <td colspan="5"><input id="result" placeholder="0" name="display" value="" size="28" maxlength="25"></td>
+        </tr>
+
+<tr>
+    <td><input type="button" class="btnMath" name="btnMath" value="%"></td> 
+    <td><input type="button" class="btnOpps" name="btnOpps" value="π" onclick="updateInput('π')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="C" onclick="fullClear()"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="Del" onclick="clearInput()"></td>
+    <td><input type="text" class="letter" name="letter" value="M"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnTop" name="btnTop" value="N(HEX>D)" onclick="conversions('h>d')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="N(D>HEX)" onclick="conversions('d>h')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="L(Cm>Inc)" onclick="conversions('cm>inc')"></td>  
+    <td><input type="button" class="btnTop" name="btnTop" value="L(Inc>Cm)" onclick="conversions('inc>cm')"></td> 
+    <td><input type="text" class="letter" name="letter" value="I"></td>
+</tr>
+
+<tr>
+    <td><input type="button" class="btnTop" name="btnTop" value="W(G>O)" onclick="conversions('g>o')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="W(O>G)" onclick="conversions('o>g')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="W(K>P)" onclick="conversions('k>p')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="W(P>K)" onclick="conversions('p>k')"></td>
+    <td><input type="text" class="letter" name="letter" value="R"></td>
+</tr>
+    
+
+<tr>
+    <td><input type="button" class="btnTop" name="btnTop" value="T(C>F)" onclick="conversions('c>f')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="T(F>C)" onclick="conversions('f>c')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="N(D>B)" onclick="conversions('d>b')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="N(B>D)" onclick="conversions('b>d')"></td>
+    <td><input type="text" class="letter" name="letter" value="A"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnOpps" name="btnOpps" value="x^2" onclick="conversions('x^2')"></td>
+    <td><input type="button" class="btnMath" name="btnMath" value="cos" onclick="conversions('cos')"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="sin" onclick="conversions('sin')"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="tan" onclick="conversions('tan')"></td> 
+    <td><input type="button" class="btnOpps" name="btnOpps" value="3√" onclick="conversions('3√')"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnOpps" name="btnOpps" value="x^3" onclick="conversions('x^3')"></td>
+    <td><input type="button" class="btnOpps" name="btnOpps" value="√" onclick="conversions('√')"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="(" onclick="updateInput('(')"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value=")" onclick="updateInput(')')"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="/" onclick="updateQuery('/')"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnNum" name="btnNum" value="7" onclick="updateInput(7)"></td> 
+    <td><input type="button" class="btnNum" name="btnNum" value="8" onclick="updateInput(8)"></td> 
+    <td><input type="button" class="btnNum" name="btnNum" value="9" onclick="updateInput(9)"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="*" onclick="updateQuery('*')"></td>
+    <td><input type="text" class="letter" name="letter" value="C"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnNum" name="btnNum" value="4" onclick="updateInput(4)"></td> 
+    <td><input type="button" class="btnNum" name="btnNum" value="5" onclick="updateInput(5)"></td> 
+    <td><input type="button" class="btnNum" name="btnNum" value="6" onclick="updateInput(6)"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="-" onclick="updateQuery('-')"></td>
+    <td><input type="text" class="letter" name="letter" value="L"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnNum" name="btnNum" value="1" onclick="updateInput(1)"></td> 
+    <td><input type="button" class="btnNum" name="btnNum" value="2" onclick="updateInput(2)"></td>
+    <td><input type="button" class="btnNum" name="btnNum" value="3" onclick="updateInput(3)"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="+" onclick="updateQuery('+')"></td>
+    <td><input type="text" class="letter" name="letter" value="E"></td> 
+</tr>
+
+<tr>
+    <td><input type="button" class="btnMath" name="btnMath" value="&#177"></td> 
+    <td><input type="button" class="btnNum" name="btnNum" value="0" onclick="updateInput(0)"></td> 
+    <td><input type="button" class="btnMath" name="btnMath" value="." onclick="updateInput('.')"></td> 
+    <td><input type="button" class="btnTop" name="btnTop" value="=" onclick="calculateResult()"></td>
+    <td><input type="text" class="letter" name="letter" value="Makers"></td> 
+</tr>
+
+   </form>
+  
+
+</body>
+</html>
